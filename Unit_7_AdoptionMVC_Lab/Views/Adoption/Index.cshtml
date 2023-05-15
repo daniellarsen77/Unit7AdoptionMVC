@@ -1,0 +1,22 @@
+﻿@model List<Animal>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+
+@foreach (Animal A in Model)
+{
+    <div>
+        <form asp-method="button" asp-action="Adopted" asp-route-AnimalId="@A.Id">
+            <img class="AnimalImage" src="@A.Img" />
+            <p>My name is @A.Name</p>
+            <p>Breed: @A.Breed</p>
+            <p>Description: @A.Description</p>
+            <p>Age: @A.Age</p>
+            <p><button class="submit">Adopt me!</button></p>
+        </form>
+    </div>
+}

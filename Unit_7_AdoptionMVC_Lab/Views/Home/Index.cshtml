@@ -1,0 +1,23 @@
+﻿@model List<string>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to the Adoption Center!</h1>
+    
+    <form asp-controller="Adoption" asp-action="Index">
+
+        <label for="Breeds">Choose a breed:</label>"
+        <select name="SelectedBreed" id="Breeds">
+            @foreach (string s in Model)
+            {
+                <option value="@s">@s</option>
+            }
+
+        </select>
+        <button type="submit">Submit!</button>
+    </form>
+
+
+</div>
